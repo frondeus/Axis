@@ -2,401 +2,427 @@
 <project>
   <version>3.1.3</version>
   <bgColor>0x777777</bgColor>
-  <viewPos x="381.5" y="-18"/>
+  <viewPos x="-403.5" y="370"/>
   <firstLayersTop>false</firstLayersTop>
-  <spriteEntries currentId="9">
-    <sprite name="Enter" idx="1" className="way" image="../graphics/entities/door.png" width="64" height="64" preview="4" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
+  <spriteEntries currentId="12">
+    <group name="Entities" idx="1" open="false">
+      <sprite name="Mib" idx="2" className="mib" image="../graphics/entities/mib.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    </group>
+    <group name="Traps n Obstacles" idx="3" open="false">
+      <sprite name="Spikes" idx="4" className="obstacle" image="../graphics/entities/obstacles.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
+        <properties>
+          <type typeof="String" name="type" value="spikes" hidden="false"/>
+        </properties>
+      </sprite>
+      <sprite name="Trap" idx="5" className="trap" image="../graphics/entities/traps.png" width="32" height="32" preview="1" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    </group>
+    <group name="Valuable" idx="6" open="false">
+      <sprite name="Coin" idx="7" className="coin" image="../graphics/entities/coin.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
+        <properties>
+          <type typeof="Int" name="value" value="10" hidden="false"/>
+        </properties>
+      </sprite>
+      <sprite name="Bonus" idx="8" className="bonus" image="../graphics/entities/bonus.png" width="32" height="56" preview="0" anchorX="16" anchorY="28" centerAnchor="true" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="56" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    </group>
+    <sprite name="Spawn" idx="9" className="spawn" image="../graphics/entities/door.png" width="64" height="64" preview="3" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    <sprite name="Exit" idx="10" className="exit" image="../graphics/entities/exit.png" width="32" height="64" preview="0" anchorX="16" anchorY="32" centerAnchor="true" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
       <properties>
-        <type typeof="Boolean" name="enter" value="true" hidden="false"/>
-      </properties>
-    </sprite>
-    <sprite name="Exit" idx="2" className="way" image="../graphics/entities/door.png" width="64" height="64" preview="3" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
-      <properties>
-        <type typeof="Boolean" name="enter" value="false" hidden="false"/>
         <type typeof="String" name="where" value="2" hidden="false"/>
       </properties>
     </sprite>
-    <sprite name="Tree" idx="3" className="tree" image="../graphics/entities/drzewo.png" width="64" height="128" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="128" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
-    <sprite name="Tree" idx="4" className="tree2" image="../graphics/entities/drzewo2.png" width="64" height="128" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="128" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
-    <sprite name="Backdrop" idx="5" className="bg" image="../graphics/bg/sky.png" width="64" height="64" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
+    <sprite name="Night" idx="11" className="bg" image="../graphics/bg/sky.png" width="768" height="768" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="768" boundsHeight="768" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
       <properties>
         <type typeof="String" name="name" value="night" hidden="false"/>
-      </properties>
-    </sprite>
-    <sprite name="Coin" idx="6" className="coin" image="../graphics/entities/coin.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
-      <properties>
-        <type typeof="Int" name="value" value="10" hidden="false"/>
-      </properties>
-    </sprite>
-    <sprite name="Bonus" idx="7" className="bonus" image="../graphics/entities/bonus.png" width="24" height="41" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="24" boundsHeight="41" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
-    <sprite name="Spikes" idx="8" className="obstacle" image="../graphics/entities/obstacles.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false" selected="true">
-      <properties>
-        <type typeof="String" name="type" value="spikes" hidden="false"/>
       </properties>
     </sprite>
   </spriteEntries>
   <layers>
     <group name="Group1" id="8" xScroll="1" yScroll="1" visible="true" open="true" locked="false" exports="true">
-      <spritelayer name="300" id="0" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false">
-        <sprite guid="E2986F5F-0250-E7E3-83B0-C4B23D3AF093" x="192" y="0" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="5">
-          <properties/>
-        </sprite>
-      </spritelayer>
-      <spritelayer name="25" id="1" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false">
-        <sprite guid="17A6F983-1B62-0AB4-E93D-A88F2E53FA8E" x="288" y="-32" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="5">
+      <spritelayer name="300" id="0" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false"/>
+      <maplayer name="20" id="1" xScroll="1" yScroll="1" x="0" y="0" width="32" height="32" tileset="../graphics/tiles/city20.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+      </maplayer>
+      <maplayer name="10" id="2" xScroll="1" yScroll="1" x="-128" y="-128" width="40" height="40" tileset="../graphics/tiles/city10.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
+        <row>6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3</row>
+        <row>4,17,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,16,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,2,2,2,2,2,2,2,2,10,11,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,16,18,17,16,18,16,17,16,1,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,19,18,16,16,18,16,18,16,16,9,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,16,19,16,16,16,16,16,1,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,3,0,0,0,0,4,19,16,16,16,16,17,16,16,17,2,2,3,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,6,2,16,1,0,0,0,0,4,16,16,16,16,16,16,16,16,19,16,18,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,6,16,16,19,1,0,0,0,0,4,18,16,16,17,16,16,16,16,16,16,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,6,16,16,18,16,1,0,0,0,0,4,16,16,16,16,16,16,16,16,16,18,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,6,17,18,16,16,16,1,0,0,0,0,4,16,17,8,8,8,16,16,18,17,16,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,6,19,18,16,16,19,19,1,0,6,3,0,4,16,1,0,0,0,4,16,16,16,16,19,9,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,6,16,16,16,19,16,18,17,1,0,12,9,0,4,16,1,0,6,2,18,16,16,16,18,1,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,6,19,16,16,19,16,19,19,19,1,0,0,0,0,4,16,16,2,17,16,16,16,17,16,16,1,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,6,16,18,19,18,16,16,16,16,18,19,2,2,2,2,16,16,16,18,19,16,16,16,16,16,16,1,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,4,18,16,17,17,16,17,16,16,16,16,16,18,18,16,16,18,16,16,16,19,8,8,19,16,17,17,3,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,6,17,8,8,8,8,8,8,8,19,16,16,16,16,17,17,19,18,16,17,19,1,0,0,4,16,19,19,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,4,1,0,0,0,0,0,0,0,4,19,16,17,16,16,16,17,19,18,16,16,16,3,0,4,16,16,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,4,1,0,6,2,2,2,3,0,4,16,16,16,16,18,16,17,16,16,16,18,16,1,0,4,16,16,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,4,1,0,4,16,16,19,1,0,4,18,16,19,16,16,16,18,16,19,16,17,16,16,2,16,16,16,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,4,1,0,4,17,16,16,1,0,4,18,16,16,16,16,16,19,18,18,19,16,16,16,16,17,16,16,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,4,1,0,4,16,8,16,1,0,4,17,16,8,19,17,16,18,16,17,16,16,19,19,19,16,16,16,18,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,4,1,0,4,1,0,4,1,0,4,19,1,0,4,16,17,17,19,16,18,19,16,16,16,19,16,16,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,4,1,0,4,1,0,4,1,0,4,19,9,0,4,17,18,19,18,16,17,16,16,8,17,16,19,17,17,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,4,1,0,4,1,0,4,1,0,4,1,0,0,4,16,16,17,16,18,16,8,9,0,4,16,16,17,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,4,16,2,16,1,0,4,1,0,4,17,2,2,16,16,16,16,17,18,1,0,0,0,4,16,16,19,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,12,8,8,8,9,0,4,1,0,4,19,16,16,19,16,19,16,16,16,17,2,2,2,16,16,18,18,17,9,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,4,1,0,4,16,16,16,16,17,16,16,16,19,19,16,17,16,16,19,16,19,1,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,14,10,2,2,2,2,2,19,1,0,4,18,19,17,19,18,19,18,17,16,17,18,18,18,16,19,18,16,1,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,4,19,17,19,17,16,1,0,4,16,16,18,16,16,16,16,16,16,16,17,16,16,16,16,17,18,1,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,12,8,8,8,8,8,9,0,4,16,19,16,16,16,16,18,16,8,8,8,16,18,16,16,16,16,1,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,12,8,8,8,8,8,8,8,9,0,0,0,12,8,8,8,8,8,9,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,18,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,16,1</row>
+        <row>12,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9</row>
+      </maplayer>
+      <spritelayer name="1" id="3" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false">
+        <sprite guid="BC8549EF-8CE0-66B6-63A7-B909C5BD7BCA" x="32" y="896" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="9"/>
+        <sprite guid="C9333511-1D98-997D-4BEA-7440C52A9193" x="944" y="64" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="10">
           <properties>
-            <dataOverride name="name" typeof="String" value="lights" idx="0"/>
+            <dataOverride name="where" typeof="String" value="8" idx="0"/>
           </properties>
         </sprite>
-      </spritelayer>
-      <maplayer name="30" id="2" xScroll="1" yScroll="1" x="-256" y="-320" width="42" height="40" tileset="../graphics/tiles/city20.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,6,44,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,41,11,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,41,45,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,41,45,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,41,21,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,41,18,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,41,16,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,6,8,21,21,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,41,21,51,21,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,6,16,17,21,12,17,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,11,16,9,21,8,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,9,21,16,11,21,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,21,26,11,12,51,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,11,21,16,51,21,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,21,45,8,21,21,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,21,21,21,11,17,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,26,21,18,17,21,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,21,21,16,21,21,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,18,51,12,21,51,30,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,6,21,21,18,26,21,8,8,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,9,21,21,21,11,8,20,30,0,0,0,0,0,0,0,0,0,0,0,0,0,6,44,44,44,44,44,44,7,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,51,21,26,8,11,18,21,30,0,0,0,0,0,0,0,0,0,0,0,0,0,41,8,21,18,18,21,51,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,8,21,18,21,21,21,51,30,0,0,0,0,0,0,0,0,0,0,0,0,0,41,45,21,11,18,21,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,21,21,51,9,8,11,20,30,0,0,0,0,0,0,0,0,0,0,0,0,0,41,20,16,21,21,26,26,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,21,21,21,26,20,21,20,30,0,0,0,0,0,0,0,0,0,0,0,0,0,41,21,8,17,21,12,9,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,45,18,12,21,21,18,21,30,0,0,0,0,6,44,44,44,44,7,0,0,0,41,21,8,18,12,21,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,20,26,11,18,21,17,21,30,0,0,0,0,41,45,11,21,51,30,0,0,0,41,9,12,45,17,12,51,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,18,21,9,11,45,8,51,30,0,0,0,0,41,12,26,20,12,30,0,0,0,41,20,11,11,21,21,20,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,9,21,9,20,26,20,17,30,0,0,0,0,41,9,16,16,12,30,0,0,0,41,26,17,9,9,18,51,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,12,11,45,9,8,21,21,30,0,0,0,0,41,26,21,17,21,30,0,0,0,41,51,8,12,21,20,45,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,21,21,17,26,20,21,16,30,0,0,0,0,41,20,16,21,17,30,0,0,0,41,8,17,17,18,9,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,17,45,21,11,21,18,18,30,0,0,0,0,41,20,21,21,8,30,0,0,0,41,21,8,21,20,51,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,21,8,9,20,17,21,8,30,0,0,0,0,41,17,12,51,21,30,0,0,0,41,8,17,21,20,21,12,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,11,20,16,9,11,18,11,30,0,0,0,0,41,18,51,20,45,30,0,0,0,41,20,16,51,17,9,9,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,21,16,12,51,12,12,8,30,0,0,0,0,41,12,45,17,45,30,0,0,0,41,21,21,21,20,51,9,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,41,45,16,12,21,26,21,51,30,0,0,0,0,41,18,17,20,16,30,0,0,0,41,8,21,11,8,20,26,30,0,0,0,0,0,0</row>
-        <row>44,44,44,44,44,44,45,21,17,8,8,26,17,51,8,44,44,44,44,11,21,21,21,11,20,44,44,44,21,21,11,45,18,12,17,51,44,44,44,44,44,44</row>
-        <row>12,21,45,45,12,26,51,20,21,20,18,18,26,26,21,51,20,45,9,21,26,21,8,12,17,21,51,17,9,21,26,45,12,11,11,21,8,45,9,21,21,8</row>
-        <row>26,26,21,17,51,18,12,21,12,21,21,9,12,18,8,18,20,45,21,8,21,21,17,9,26,21,21,21,21,20,21,20,16,21,11,18,21,20,17,21,45,17</row>
-      </maplayer>
-      <maplayer name="20" id="3" xScroll="1" yScroll="1" x="-288" y="-160" width="45" height="35" tileset="../graphics/tiles/city20.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,44,44,7,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,41,11,18,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,44,44,7,0,0,0,0,0,0,41,21,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,41,45,21,30,0,0,0,0,0,0,41,45,17,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,41,20,45,30,0,0,0,0,0,0,41,21,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,41,26,21,30,0,0,0,0,0,0,41,21,16,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,6,44,44,44,44,7,0,0,0,0,0,0,0,0,0,0,0,41,12,21,30,0,0,0,0,0,0,41,17,9,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,41,16,21,21,21,30,0,0,0,0,0,0,0,0,0,0,0,41,8,20,30,0,0,0,6,44,44,18,21,45,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,41,51,11,21,12,30,0,0,0,0,0,0,0,0,0,0,0,41,21,18,30,0,0,0,41,17,11,21,12,16,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,41,8,12,21,21,30,0,0,0,0,0,0,0,0,0,0,6,21,21,51,20,7,0,0,41,21,21,11,45,26,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,41,12,21,21,11,30,0,0,0,0,0,0,0,0,0,0,41,51,20,21,21,30,0,0,41,45,45,45,16,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,41,45,26,21,26,30,0,0,0,0,6,7,0,0,0,0,41,12,17,17,9,30,0,0,41,12,21,11,45,20,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,41,20,45,21,21,30,0,0,0,0,41,30,0,0,0,0,41,45,16,20,21,30,0,0,41,20,9,26,21,51,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,6,11,21,17,21,26,21,7,0,0,6,12,21,7,0,0,0,41,45,12,21,21,30,0,0,41,17,9,21,8,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,21,17,21,18,21,26,30,0,0,41,51,21,30,0,0,0,41,21,17,51,21,30,0,0,41,18,9,20,26,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,21,8,21,51,16,11,30,0,0,41,9,20,30,0,0,0,41,18,8,26,16,30,0,0,41,21,8,21,16,18,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,21,21,20,45,18,9,30,0,0,41,16,20,30,0,0,0,41,45,26,11,12,30,0,0,41,21,26,21,21,20,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,20,16,18,12,51,21,30,0,0,41,21,9,30,0,0,0,41,21,26,21,21,30,0,0,41,21,21,16,21,17,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,17,8,18,21,11,12,30,0,0,41,11,11,30,0,0,0,41,11,26,21,21,30,0,0,41,51,9,18,16,20,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,45,26,18,12,21,21,30,0,0,41,21,21,30,0,0,0,41,51,21,16,16,30,0,0,41,26,21,11,21,8,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,51,51,21,18,21,11,30,0,0,41,17,9,30,0,0,0,41,18,8,20,21,30,0,0,41,11,12,21,45,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,21,17,18,12,18,9,30,0,0,41,21,20,30,0,0,0,41,21,20,21,21,30,0,0,41,9,21,51,9,45,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,41,21,21,21,51,21,21,30,0,0,41,21,17,30,0,0,0,41,8,18,21,21,30,0,0,41,21,20,21,21,18,30,0,0,0,0,0,0</row>
-        <row>44,44,44,44,44,44,44,20,45,17,45,20,21,11,21,44,44,11,21,9,9,44,44,44,20,8,21,11,18,21,44,44,20,17,11,21,17,18,20,44,44,44,44,44,44</row>
-        <row>51,26,21,21,18,12,51,16,11,21,18,21,45,20,21,12,20,21,16,17,18,16,21,18,26,20,21,51,8,21,21,45,8,9,18,8,45,21,17,16,21,17,17,26,21</row>
-        <row>20,12,16,51,12,51,21,16,12,21,45,51,21,21,51,18,12,12,8,26,9,21,26,12,21,26,18,20,9,26,21,9,21,16,45,26,11,21,20,12,17,8,21,45,11</row>
-      </maplayer>
-      <maplayer name="10" id="4" xScroll="1" yScroll="1" x="-128" y="-64" width="32" height="32" tileset="../graphics/tiles/city10.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,14,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,2,3,21,21,21,3,4,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,6,36,36,4,0,2,36,36,7,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,0,0,33,14,22,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,6,36,36,3,3,36,36,7,0,0,0,33,14,11,0,0,0,10,14,22,0,0,0,6,36,36,3,3,36,7,0</row>
-        <row>0,33,14,22,42,42,33,14,22,0,0,0,33,22,0,0,0,0,0,33,22,0,0,0,33,14,22,42,42,33,22,0</row>
-        <row>0,10,21,11,42,42,10,21,11,0,0,0,33,22,0,0,0,0,0,33,22,0,0,0,10,21,11,42,42,10,11,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,33,22,0,0,0,0,0,33,22,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,33,22,0,0,0,0,0,33,22,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,6,14,22,0,0,0,0,0,33,14,7,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,0,0,0,0,33,14,22,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,0,0,0,0,33,14,22,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,0,0,0,0,33,14,22,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,6,14,14,22,0,0,0,0,0,33,14,14,7,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,6,14,14,14,22,0,0,0,0,0,33,14,14,14,7,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,33,14,14,14,22,0,0,0,0,0,33,14,14,14,22,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,33,14,14,14,14,36,36,36,36,36,14,14,14,14,22,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,10,21,14,14,14,14,14,14,14,14,14,14,14,21,11,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,10,21,21,21,21,21,21,21,21,21,11,0,0,0,0,0,0,0,0,0,0</row>
-      </maplayer>
-      <spritelayer name="1" id="5" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false" selected="true">
-        <sprite guid="DA9BF781-FC4A-130F-1207-214AC8002378" x="0" y="480" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="1">
+        <sprite guid="5980CB46-50C9-AAA6-0614-32884A0977A9" x="960" y="160" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="17DA40BC-D490-264C-46B7-0AF90D4A812A" x="736" y="480" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="2">
-          <properties>
-            <dataOverride name="where" typeof="String" value="8" idx="1"/>
-          </properties>
-        </sprite>
-        <sprite guid="5D1C3719-526E-E879-B06C-A98617B2F626" x="128" y="512" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="9583FC38-0C3F-3C57-3AFA-3508BB2D2427" x="960" y="192" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="4108D2AC-97E0-625A-BA1E-6E7BE6B20D08" x="-96" y="512" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="3A6EB3C3-4570-5CC9-9227-702EAE198520" x="960" y="224" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="CE5E8599-D2E0-2785-C1E4-806D7461153A" x="-128" y="864" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="8C007B53-BA75-A77E-4D9D-74532DF32440" x="960" y="256" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="A1CEC780-8E7C-1596-B52A-140B30A9BB6F" x="160" y="864" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="3E229963-67A9-7607-A88D-7A0DBE7522EF" x="960" y="288" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="7CC12C49-D32A-1200-08F6-688B56E547E5" x="608" y="864" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="71EF7D9F-A5D6-04A6-A737-6EFC800A7502" x="960" y="320" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="F442AF32-946C-118B-1724-BE2EFA362A42" x="640" y="512" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="7001B0E2-20EA-CEBC-4CD1-5BC899D3D6E7" x="960" y="448" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="24D16D28-AE17-660A-6284-2B619581725C" x="832" y="512" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="AE152708-8B47-4C76-6798-52717DD51439" x="960" y="480" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="92578958-77AF-9F96-3A97-C5CBE6A79B6F" x="320" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="6C624E21-D0C5-1F3F-A418-23629FC51082" x="960" y="512" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="F781DD29-144A-E0EA-2AC3-E1DA9A08DDD9" x="448" y="736" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="0A3228AA-0B43-DFD3-6613-B6B2F18EE308" x="960" y="544" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="900BBC55-F25C-F7D7-D33A-0B872841CE13" x="448" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="87C2AC79-8A26-5AE4-FCEC-AB628E9C0665" x="960" y="576" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="D0D71739-58FA-4300-E95F-798CAD341BF0" x="320" y="736" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="FADB6B08-5AB6-9759-A99D-439AFC105866" x="960" y="608" Z="0" angle="270.55" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="AE7451C6-A326-A5D2-4F1C-B115E24F3107" x="384" y="736" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="3A6B0F44-BF90-F126-D0CD-9F4855DD344D" x="960" y="640" Z="0" angle="270.55" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="084E6536-85F0-B6DE-E3CC-1939F4E6F8AB" x="384" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="6">
+        <sprite guid="EF4D7BCD-4791-40D6-A90B-4031C8E4A9A9" x="960" y="672" Z="0" angle="270.55" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="BA08DAA8-CB2B-D7E4-32EC-E340BE4E9DFF" x="160" y="736" Z="0" angle="90.67" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="FF7FF2D9-E8CF-E42D-EF09-457F09CCD36F" x="960" y="704" Z="0" angle="270.55" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="E88C650C-B4E8-9EEF-15DD-7E541A8B9D54" x="160" y="672" Z="0" angle="90.67" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="4BD8B354-985B-A6F2-60FE-65EC9D97D737" x="960" y="736" Z="0" angle="270.55" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="A4069714-F704-DC53-7062-9E22C6AAFDF2" x="160" y="704" Z="0" angle="90.67" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="F09B8757-2A03-41D6-993D-42EEFA16EAB2" x="960" y="768" Z="0" angle="270.55" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="76BA5C74-7E34-DBF1-F687-32DD978A2888" x="160" y="640" Z="0" angle="90.67" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="F92EA75E-B0AF-8330-06D8-5540BE2FCA3D" x="960" y="768" Z="0" angle="270.55" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="C7B38408-E5D8-2EC2-4DB3-0D115CB0DB9E" x="608" y="736" Z="0" angle="269.25" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="85AC9BC0-A64F-5CC2-03AA-EC9EB7360F6E" x="960" y="800" Z="0" angle="270.55" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="9FDD6A29-C802-4DE1-6CA8-76D40A82AED7" x="608" y="704" Z="0" angle="269.25" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="6450F0EF-7EDF-DA3B-E38D-05F47AEEA0FC" x="896" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="F26EBE15-A69C-84A6-7D8E-412FD32B455F" x="608" y="640" Z="0" angle="269.25" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="1EBB0996-C60E-C6E6-5B4D-09492DBA54EB" x="928" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="D496E299-BB3D-1F7E-DB84-A20B4E0FEFF6" x="608" y="672" Z="0" angle="269.25" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="D02ACE8F-895A-6516-811F-5E12F7D964E5" x="864" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="30A5CBF5-69C1-D6BF-6D1B-5608F67290F2" x="256" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="D6F3DB12-B615-29BB-AC47-C7243D0A67E4" x="832" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="0CA32B30-9529-7474-E1A9-DCE960E41644" x="288" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="340A9167-9408-D026-DEBA-AF50EA8F095E" x="768" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="E7BEDBA2-55BA-D51E-3E0C-1BE5CAFAAACF" x="320" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="2AC379BB-4374-673B-EDA3-31AE0DEB47DE" x="800" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="54479845-EB13-344A-0AA0-9AF03C7744C1" x="352" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="E0133ED3-2570-0C80-44E4-6FE4C8E52144" x="736" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="DBD3E946-DC32-DAE0-C6F8-B49E5449AD85" x="384" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="7143AA84-7ED9-0AC0-5490-0B78BA40916F" x="608" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="E69F6881-7A85-259E-21A3-F6742795BC97" x="416" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="7C97549E-EB3D-4A95-B06D-8BEBE43E3417" x="544" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="D68B5B01-C5E9-16AD-0D72-7261D49AE504" x="448" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="BE215C6B-A980-815D-97C0-EBA8CFAFCD99" x="576" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="AFB0B1FE-2969-EAF3-3953-5B77BAD0CCAA" x="480" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="CE9840D8-FAAE-39B3-D65A-392BFC9EF374" x="480" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="162BB022-355C-A1DF-5962-0C08EF7AF44C" x="512" y="320" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="B4752D09-C2B4-F503-8251-30A0F94094FB" x="512" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="3BF72F55-526D-5A70-5B7E-30F60A71B1F2" x="320" y="384" Z="0" angle="180.69" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="C6DBA831-3FC0-0556-2013-8030CB1A60BC" x="448" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="E1C3A17F-E89B-17F7-BC92-4DDACB5C2E3F" x="352" y="384" Z="0" angle="180.69" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="60194007-B23C-E8A9-8DE0-E08391DEEB94" x="416" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="235A4C72-229D-5C30-03A2-1270FC2F4BDC" x="384" y="384" Z="0" angle="180.69" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="984D961A-2A7C-6F4F-B025-E37758B06EB5" x="352" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="AC89A56B-354E-C290-0CF2-E9DDE5C12091" x="416" y="384" Z="0" angle="180.69" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="3AD7C164-3706-8913-F87F-D05C9D13BBC9" x="384" y="960" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
           <properties/>
         </sprite>
-        <sprite guid="D5022CBA-2654-7D6A-22BD-BBBF4A4CD801" x="448" y="384" Z="0" angle="180.69" scaleX="1" scaleY="1" flipped="false" idx="8">
+        <sprite guid="3C49ED73-BC31-BA00-7BFF-1BAEFB1F7A84" x="224" y="640" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="56A573BB-8AB9-27BB-B9A8-537B47830FA5" x="416" y="160" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="67D9F357-683B-09DD-FB05-AE459C964385" x="416" y="192" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="A6ED2003-09B0-AE04-CD79-888B00F28D64" x="416" y="224" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="D88D2BB1-930D-70F7-D61E-27FDD7A3D93B" x="416" y="256" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="145C1765-CB3E-64C1-24CF-A08F587FFDBB" x="416" y="288" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="163BA267-3585-5CF9-3895-BE8D76BCC888" x="416" y="320" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="95A3DB53-1FA7-B019-3489-812393FC6A50" x="416" y="352" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="F6CFB770-C506-8135-C66F-703041715231" x="416" y="352" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="0F455236-A331-20E9-B40B-A15C8C0ACEBA" x="416" y="384" Z="0" angle="268.91" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="6B9F2554-95BA-721D-CCCA-7870E2962ABF" x="496" y="324" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="8"/>
+        <sprite guid="63A1E4C4-13B3-F7D2-D6C7-30E4D20D8C56" x="160" y="928" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="8DD18E0A-E880-9ED4-47D1-DEDC45390750" x="256" y="928" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="18DBD497-710C-B6EE-0DDF-4D39FD050333" x="256" y="544" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="74CB274E-2434-59AA-44F7-EF7AA8B2492F" x="192" y="544" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="B6F9A674-EF8E-89CD-2B08-44D0F3E14997" x="160" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="5E622D25-F8E4-085A-A227-8E3486CC89EC" x="96" y="800" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="1FD6E8F0-6F10-96F6-8101-0BA8589EA8FB" x="160" y="480" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="5087B642-3F27-32B8-6679-14FAC2302CA6" x="288" y="480" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="C661E1B5-CAF9-DCC6-C06A-08CBB6CC6E96" x="224" y="480" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="512D0601-6074-E165-CA14-00C5C62863DB" x="416" y="704" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="FE787C48-8779-5439-C7B2-B8005B7A8E7F" x="608" y="608" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="7B864469-C832-3071-2E8D-8F6879514D3E" x="768" y="512" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="59378807-7928-23CD-A9F1-20D44F52A6CC" x="704" y="352" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="9E4FF411-B7AE-2A8D-938E-BD9884DA0571" x="736" y="736" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="826AB1FA-BB4D-1B15-7A79-82EEAEBF08B8" x="704" y="928" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="D4C4DFBE-68E5-7E4A-2907-813FC1BCB18B" x="640" y="928" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="9DB5065F-1924-6EB9-DD31-AECCEAB7BD19" x="928" y="832" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="1C16FE2F-2166-F886-6F89-A4A99F784E8C" x="928" y="896" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
           <properties/>
         </sprite>
       </spritelayer>
-      <maplayer name="0" id="6" xScroll="1" yScroll="1" x="-128" y="-64" width="32" height="32" tileset="../graphics/tiles/city0.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,2,3,3,3,3,3,3,3,4,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,6,36,36,36,36,36,36,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,36,36,36,36,36,7,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>0,33,14,14,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,14,22,0</row>
-        <row>6,14,14,14,14,14,14,14,14,36,7,0,0,0,0,0,0,0,0,0,0,0,6,36,14,14,14,14,14,14,14,7</row>
-        <row>10,21,21,21,21,21,21,21,21,21,11,0,0,0,0,0,0,0,0,0,0,0,10,21,21,21,21,21,21,21,21,11</row>
+      <maplayer name="collision" id="4" xScroll="1" yScroll="1" x="0" y="0" width="32" height="32" tileset="../graphics/bg/sky.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
+        <row>10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10</row>
+        <row>10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,0,0,0,0,0,0,0,0,0,0,0,10,10,10,10,10,10,0,0,0,0,0,0,0,10,10,10,10,10,10,10</row>
+        <row>10,0,0,0,0,0,0,0,0,0,10,10,0,0,10,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,0,0,0,0,0,0,0,0,10,0,0,0,0,10,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,0,0,0,0,0,0,10,10,0,0,0,0,0,10,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,0,0,0,0,0,10,10,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,0,0,0,0,10,10,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,0,0,0,10,10,0,0,0,0,0,0,0,0,10,0,0,10,0,0,0,10,10,10,0,0,0,0,0,0,0,10</row>
+        <row>10,0,0,0,10,0,0,0,0,0,0,0,0,0,10,0,0,10,0,0,0,10,0,0,0,0,0,0,0,0,10,10</row>
+        <row>10,0,0,10,0,0,0,0,0,0,0,0,0,0,10,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,10,10</row>
+        <row>10,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10</row>
+        <row>10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10,0,0,0,0,0,10</row>
+        <row>10,10,0,0,10,10,10,10,10,10,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,10</row>
+        <row>10,10,0,0,10,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,10</row>
+        <row>10,10,0,0,10,0,0,0,0,0,10,0,0,0,0,0,0,0,0,10,10,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,10,0,0,10,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,10,0,0,10,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,10,0,0,10,0,0,10,0,0,10,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,10,0,0,10,0,0,10,0,0,10,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,10,0,0,10,0,0,10,0,0,10,0,0,10,10,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,10</row>
+        <row>10,10,0,0,0,0,0,10,0,0,10,0,0,0,0,0,0,0,0,0,0,0,10,10,10,0,0,0,0,0,0,10</row>
+        <row>10,10,0,0,0,0,0,10,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10</row>
+        <row>10,10,10,10,10,10,10,10,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10</row>
+        <row>10,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10</row>
+        <row>10,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10</row>
+        <row>10,0,0,0,0,0,0,0,0,0,10,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,10,10</row>
+        <row>10,10,10,10,10,10,10,10,10,10,10,0,0,0,0,0,0,0,0,0,10,10,10,0,0,0,0,0,0,0,10,10</row>
+        <row>10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10</row>
       </maplayer>
-      <maplayer name="collision" id="7" xScroll="1" yScroll="1" x="-128" y="-64" width="32" height="32" tileset="../graphics/bg/sky.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,2,3,3,3,3,3,3,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0</row>
-        <row>1,1,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1</row>
-        <row>1,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1</row>
+      <maplayer name="0" id="5" xScroll="1" yScroll="1" x="-64" y="-64" width="36" height="36" tileset="../graphics/tiles/city0.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false" selected="true">
+        <row>6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3</row>
+        <row>4,16,16,17,16,16,16,19,16,16,16,16,19,16,18,16,18,16,19,16,16,16,17,16,17,16,19,16,17,18,16,18,18,17,16,1</row>
+        <row>4,16,16,17,16,16,16,16,16,16,16,16,19,16,19,17,16,16,16,17,16,18,8,8,8,8,8,8,8,8,8,8,8,19,18,1</row>
+        <row>4,16,16,16,19,16,16,16,18,19,17,16,16,18,16,16,16,17,19,16,16,9,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,17,16,16,16,17,17,16,16,16,16,18,19,16,17,17,16,16,16,16,9,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,18,16,16,16,16,16,18,16,16,16,16,16,17,16,16,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,18,1</row>
+        <row>4,16,19,16,19,16,17,18,16,16,18,16,19,16,8,8,16,16,16,1,0,0,0,0,0,0,0,14,10,10,10,10,10,16,19,1</row>
+        <row>4,18,18,17,16,16,19,16,16,16,16,19,8,9,0,0,4,16,17,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,16,18,16,16,19,16,16,16,9,0,0,0,0,4,16,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,19,19,16,16,17,16,16,16,16,9,0,0,0,0,0,4,16,17,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,17,1</row>
+        <row>4,16,16,16,18,19,16,16,18,9,0,0,0,0,0,0,4,16,17,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,16,18,16,16,16,9,0,0,0,0,0,0,0,4,8,8,1,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,16,16,16,19,9,0,0,0,0,0,0,0,0,5,0,0,5,0,0,0,6,10,11,0,0,0,0,0,0,0,4,19,1</row>
+        <row>4,16,17,16,16,16,9,0,0,0,0,0,0,0,0,0,5,0,0,5,0,0,0,13,0,0,0,0,0,0,0,0,6,18,16,1</row>
+        <row>4,16,16,17,18,9,0,0,0,0,0,0,0,0,0,0,12,10,10,9,0,0,0,0,0,0,0,0,0,0,0,0,4,16,16,1</row>
+        <row>4,17,16,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,16,19,1</row>
+        <row>4,16,17,16,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,3,0,0,0,0,0,4,16,1</row>
+        <row>4,19,16,1,0,0,6,10,10,10,10,10,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,1,0,0,5,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,4,16,1</row>
+        <row>4,17,19,1,0,0,5,0,0,0,0,0,5,0,0,0,0,0,0,0,0,14,3,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,19,1,0,0,5,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,4,17,1</row>
+        <row>4,16,16,1,0,0,5,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,13,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,19,17,1,0,0,5,0,0,7,0,0,5,0,0,0,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,1,0,0,5,0,0,5,0,0,5,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,1,0,0,13,0,0,5,0,0,5,0,0,14,9,0,0,0,0,0,0,0,0,0,7,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,1,0,0,0,0,0,5,0,0,5,0,0,0,0,0,0,0,0,0,0,0,14,10,9,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,1,0,0,0,0,0,5,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,16,8,10,10,10,10,10,9,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,16,16,1</row>
+        <row>4,16,1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,16,1</row>
+        <row>4,16,1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,16,1</row>
+        <row>4,16,1,0,0,0,0,0,0,0,0,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,19,17,1</row>
+        <row>4,16,16,2,2,2,2,2,2,2,2,2,1,0,0,0,0,0,0,0,0,0,6,2,3,0,0,0,0,0,0,0,4,16,16,1</row>
+        <row>4,16,16,16,16,18,16,16,19,16,16,16,16,2,2,2,2,2,2,2,2,2,18,17,16,2,2,2,2,2,2,2,17,18,16,1</row>
+        <row>4,19,16,18,16,16,16,18,16,17,17,18,18,17,17,17,16,17,17,16,16,16,16,18,16,16,16,17,17,16,19,16,16,19,16,1</row>
+        <row>12,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9</row>
       </maplayer>
-      <shapelayer name="-1" id="8" xScroll="1" yScroll="1" visible="false" locked="false" exports="true" aligned="false" sort="false"/>
     </group>
   </layers>
   <layerTemplates/>
-  <tileMatrix currentMatrix="1" rows="6" cols="6" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="true" allowSpecialTiles="true" tileset="../graphics/tiles/city20.png">
+  <tileMatrix currentMatrix="0" rows="5" cols="5" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="false" allowSpecialTiles="true" tileset="../graphics/tiles/city0.png">
     <row>
       <tile>6</tile>
-      <tile>44</tile>
-      <tile>44</tile>
-      <tile>44</tile>
-      <tile>44</tile>
-      <tile>7</tile>
+      <tile>2</tile>
+      <tile>2</tile>
+      <tile>2</tile>
+      <tile>3</tile>
     </row>
     <row>
-      <tile>41</tile>
-      <tile>8</tile>
-      <tile>9</tile>
-      <tile>11</tile>
-      <tile>12</tile>
-      <tile>30</tile>
-    </row>
-    <row>
-      <tile>41</tile>
+      <tile>4</tile>
       <tile>16</tile>
       <tile>17</tile>
+      <tile>16</tile>
+      <tile>1</tile>
+    </row>
+    <row>
+      <tile>4</tile>
       <tile>18</tile>
-      <tile>20</tile>
-      <tile>30</tile>
+      <tile>19</tile>
+      <tile>16</tile>
+      <tile>1</tile>
     </row>
     <row>
-      <tile>41</tile>
-      <tile>26</tile>
-      <tile>45</tile>
-      <tile>51</tile>
-      <tile>21</tile>
-      <tile>30</tile>
+      <tile>4</tile>
+      <tile>16</tile>
+      <tile>16</tile>
+      <tile>16</tile>
+      <tile>1</tile>
     </row>
     <row>
-      <tile>41</tile>
-      <tile>21</tile>
-      <tile>21</tile>
-      <tile>21</tile>
-      <tile>21</tile>
-      <tile>30</tile>
-    </row>
-    <row>
-      <tile>14</tile>
-      <tile>29</tile>
-      <tile>29</tile>
-      <tile>29</tile>
-      <tile>29</tile>
-      <tile>15</tile>
+      <tile>12</tile>
+      <tile>8</tile>
+      <tile>8</tile>
+      <tile>8</tile>
+      <tile>9</tile>
     </row>
     <specialConnections>
       <sets>
@@ -446,57 +472,39 @@
       <rows>
         <row set="0">
           <tiles>
-            <id>4</id>
+            <id>11</id>
             <id>13</id>
-            <id>2</id>
-            <id>5</id>
+            <id>14</id>
+            <id>7</id>
           </tiles>
         </row>
         <row set="3">
           <tiles>
-            <id>3</id>
             <id>10</id>
-            <id>1</id>
+            <id>5</id>
+            <id>15</id>
             <id>0</id>
           </tiles>
         </row>
       </rows>
     </specialConnections>
   </tileMatrix>
-  <tileMatrixData name="matrix1" rows="1" cols="1" randomizeMiddle="true" ignoreClear="false" ignoreMapEdges="true" allowSpecialTiles="false" tileset="../graphics/city.png">
-    <tiles>1</tiles>
-    <connections set="3">
-      <tiles>3,1,1,3</tiles>
-    </connections>
+  <tileMatrixData name="Tiles" rows="5" cols="5" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="false" allowSpecialTiles="true" tileset="../graphics/tiles/city0.png">
+    <tiles>6,2,2,2,3,4,16,17,16,1,4,18,19,16,1,4,16,16,16,1,12,8,8,8,9</tiles>
     <connections set="0">
-      <tiles>5,1,2,1</tiles>
+      <tiles>11,13,14,7</tiles>
+    </connections>
+    <connections set="3">
+      <tiles>10,5,15,0</tiles>
     </connections>
   </tileMatrixData>
-  <tileMatrixData name="city" rows="6" cols="6" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="true" allowSpecialTiles="true" tileset="../graphics/tiles/city20.png">
-    <tiles>6,44,44,44,44,7,41,8,9,11,12,30,41,16,17,18,20,30,41,26,45,51,21,30,41,21,21,21,21,30,14,29,29,29,29,15</tiles>
+  <tileMatrixData name="City" rows="5" cols="5" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="false" allowSpecialTiles="true" tileset="../graphics/tiles/city20.png">
+    <tiles>6,44,44,44,7,41,8,9,11,30,41,12,16,17,30,41,18,20,45,30,14,29,29,29,15</tiles>
     <connections set="0">
       <tiles>4,13,2,5</tiles>
     </connections>
     <connections set="3">
       <tiles>3,10,1,0</tiles>
-    </connections>
-  </tileMatrixData>
-  <tileMatrixData name="tiles" rows="6" cols="6" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="false" allowSpecialTiles="true" tileset="../graphics/tiles/city0.png">
-    <tiles>6,36,36,36,36,7,33,14,14,14,14,22,33,14,14,14,14,22,33,14,14,14,14,22,33,14,14,14,14,22,10,21,21,21,21,11</tiles>
-    <connections set="0">
-      <tiles>4,9,2,5</tiles>
-    </connections>
-    <connections set="3">
-      <tiles>3,8,1,0</tiles>
-    </connections>
-  </tileMatrixData>
-  <tileMatrixData name="background" rows="6" cols="6" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="true" allowSpecialTiles="true" tileset="../graphics/tiles/city20.png">
-    <tiles>6,36,36,36,36,7,33,14,14,14,14,22,33,14,14,14,14,22,33,14,14,14,14,22,33,14,14,14,14,22,10,21,21,21,21,11</tiles>
-    <connections set="0">
-      <tiles>4,9,2,5</tiles>
-    </connections>
-    <connections set="3">
-      <tiles>3,8,1,0</tiles>
     </connections>
   </tileMatrixData>
   <tileBrushes/>
@@ -544,6 +552,10 @@
     <SaveGuidesSeparately>false</SaveGuidesSeparately>
     <ForceTilemapPositionChangesInUnits>false</ForceTilemapPositionChangesInUnits>
   </options>
+  <exporter name="/home/frondeus/Dropbox/Projekty/Axis/assets/levels/Exporters/Axis_Export.lua" spritepos="Top Left" rotatedSpritePos="false" relativePaths="false" useProjectExporterOnly="false">
+    <setting name="LevelName">6</setting>
+    <setting name="DataDir">/home/frondeus/Dropbox/Projekty/Axis/assets/levels</setting>
+  </exporter>
   <customPropertyTypes/>
   <guides>
     <snap>true</snap>

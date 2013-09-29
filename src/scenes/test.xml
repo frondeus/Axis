@@ -1,0 +1,11 @@
+<level title="Test" background="cave">
+	<layers>
+		<layer layer="0" rows="2" cols="2">
+			<tile id="1" x="1" y="1"/>
+			<tile id="1" x="2" y="1"/>
+			<tile id="1" x="1" y="2"/>
+			<tile id="1" x="2" y="2"/>
+		</layer>
+	</layers>
+</level>
+

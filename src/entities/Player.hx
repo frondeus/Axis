@@ -11,7 +11,6 @@ import com.haxepunk.utils.Key;
 import com.haxepunk.utils.Touch;
 import com.haxepunk.graphics.Text;
 import com.haxepunk.Sfx;
-import entities.Usable;
 
 class Player extends Body
 {
@@ -24,6 +23,7 @@ class Player extends Body
 		sprite.add("walk", [1,2,3,2], 12);
 		sprite.play("idle");
 		sprite.scale = 2.0;
+
 		
 
 		moveImage = new Image("gfx/ui/move.png");
@@ -34,18 +34,19 @@ class Player extends Body
 
 		Input.define("left", [Key.LEFT, Key.A]);
 		Input.define("right", [Key.RIGHT, Key.D]);
-		Input.define("jump", [Key.UP,Key.W]);
+		Input.define("jump", [Key.UP,Key.W,Key.SPACE]);
+		
 
-		setHitbox(32+4,32,8);
+		originX = 16;
+		originY = 16;
+		setHitbox(32,32);
 		type = "player";
-	
-		useDelay = 0.0;
 
 		graphic = new Graphiclist([sprite,emitter,moveImage]);
 		maxJumps = 2;
 		jumpTime = 0.0;
 
-		slowmot = 1.0;
+		
 
 		movePoint = new flash.geom.Point(0,0);
 
@@ -76,57 +77,26 @@ class Player extends Body
 			if(Input.touches.exists(0))
 			{
 				var t = Input.touches.get(0);
-				var e:Usable = cast collide("usable",t.sceneX,t.sceneY);
-				if((e != null) && (Math.abs(x - t.sceneX) < e.dist))
+				if(t.pressed)
 				{
-					useDelay += HXP.elapsed;
-
-					if(useDelay >= 1.0)
-					{
-						e.use(this);
-						useDelay = 0.0;
-					}
+					movePoint.x = t.x;
+					movePoint.y = t.y;
 				}
-				else
-				{
-					useDelay = 0.0;
-					if(t.pressed)
-					{
-						trace("MOVE");
-						movePoint.x = t.x;
-						movePoint.y = t.y;
-					}
-					trace("Move: " + (movePoint.x - t.x));
-					inputLeft = ((movePoint.x - t.x) > 32);
-					inputRight = ((movePoint.x - t.x) < -32);
-					moveImage.visible = true;
-					moveImage.x = movePoint.x-16;
-					moveImage.y = movePoint.y-16;
-				}
+				inputLeft = ((movePoint.x - t.x) > 32);
+				inputRight = ((movePoint.x - t.x) < -32);
+				moveImage.visible = true;
+				moveImage.x = movePoint.x-16;
+				moveImage.y = movePoint.y-16;
+				
 			}
-			else useDelay = 0.0;
 			if(Input.touches.exists(1)) inputJump = true;
 		}
 		else 
 #end
 		if(Input.mouseDown)
 		{
-			var e:Usable = cast collide("usable",HXP.scene.mouseX,HXP.scene.mouseY);
-			if((e != null) && (Math.abs(x - HXP.scene.mouseX) < e.dist))
-			{
-				useDelay += HXP.elapsed;
-				if(useDelay >= 1.0)
-				{
-					e.use(this);
-					useDelay = 0.0;
-				}
-			}
-			else
-			{
-				useDelay = 0.0;
-				inputLeft =	(HXP.scene.mouseX < x);
-				inputRight = (HXP.scene.mouseX > x);
-			}
+			inputLeft =	(HXP.scene.mouseX < x);
+			inputRight = (HXP.scene.mouseX > x);
 		}
 		
 
@@ -136,7 +106,7 @@ class Player extends Body
 
 		
 
-		HXP.rate += (slowmot - HXP.rate) * 0.15;
+	
 		if(HXP.rate < 0.1) HXP.rate = 0.0;
 
 		if(inputLeft)	acc.x = -1;	
@@ -160,17 +130,21 @@ class Player extends Body
 		}
 		if(jumpTime > 0 && jumpTime <= 0.2 && inputJump)
 		{
-			var spY = 150 * HXP.elapsed;
+			var spY = 120 * HXP.elapsed;
 
 			if(onWall && !onGround) 
 			{
-				vel.x -= hitDir.x * 200.0 * HXP.elapsed;
+				vel.x -= hitDir.x * 400.0 * HXP.elapsed;
+				vel.x += acc.x * 200.0 * HXP.elapsed;
+				
 				for(i in 1 ... 4) emitter.emit("coins",x,y);
 			}
 			
 			vel.y -= spY;	
 			jumpTime += HXP.elapsed;
 		}
+
+		
 			
 	}
 
@@ -189,6 +163,7 @@ class Player extends Body
 
 		score = lastScore;
 		time = lastTime;
+		HXP.rate = 0.0;
 	}
 
 	private function setAnim()
@@ -221,6 +196,7 @@ class Player extends Body
 		HXP.camera.y += ( aY - HXP.camera.y) * HXP.elapsed *  Math.max(0.8,Math.abs(vel.y));///* HXP.elapsed * 0.001  * Math.abs(aY - HXP.camera.y);
 	}
 
+
 	public override function update()
 	{	
 		if(alive) handleInput();
@@ -245,18 +221,30 @@ class Player extends Body
 		{
 			score += coin.value;
 			HXP.scene.remove(coin);
+		//	Main.gameplay.popUp("+" + coin.value,0.5,coin.x,coin.y);
+			
 			for(i in 1 ... Std.int(coin.value * 0.5)) emitter.emit("coins",coin.x,coin.y);
 			scoreSound.play();
 		}
 
-		var aim:entities.Aim = cast collide("aim",x,y);
+		var bonus:entities.Bonus = cast collide("bonus", x,y);
+		if(bonus != null)
+		{
+			score += 1000;
+			Main.gameplay.shakeScreen(10,0.5);
+			HXP.scene.remove(bonus);
+			for(i in 1 ... 20) emitter.emit("coins",bonus.x,bonus.y);
+			scoreSound.play();
+		}
+
+		var aim:entities.Exit = cast collide("exit",x,y);
 		if(aim != null)
 		{
 			Main.gameplay.lvl = aim.where;
 			Main.score.set(score,time - lastTime,time,deaths);
 			lastTime = time;
 			lastScore = score;
-			deaths = 0;
+			lastDeaths = deaths;
 			levelSound.play();
 			HXP.scene = Main.score;
 		}
@@ -271,9 +259,6 @@ class Player extends Body
 	private var movePoint:flash.geom.Point;
 	private var moveImage:Image;
 
-
-	private var useDelay:Float;
-
 	private var jumps:Int;
 	private var maxJumps:Int;
 	private var jumpTime:Float;
@@ -281,7 +266,6 @@ class Player extends Body
 	private var inputJump:Bool;
 	private var inputLeft:Bool;
 	private var inputRight:Bool;
-	private var slowmot:Float;
 
 
 	public var spawn:flash.geom.Point;
@@ -294,6 +278,7 @@ class Player extends Body
 	public var lastTime:Float;
 
 	public var deaths:Int;
+	public var lastDeaths:Int;
 
 	private var jumpSound:Sfx;
 	private var deathSound:Sfx;

@@ -2,23 +2,35 @@
 <project>
   <version>3.1.3</version>
   <bgColor>0x777777</bgColor>
-  <viewPos x="92" y="241"/>
+  <viewPos x="157" y="190"/>
   <firstLayersTop>false</firstLayersTop>
-  <spriteEntries currentId="6">
-    <sprite name="Enter" idx="1" className="way" image="../graphics/entities/door.png" width="64" height="64" preview="4" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
+  <spriteEntries currentId="12">
+    <group name="Entities" idx="1" open="false">
+      <sprite name="Mib" idx="2" className="mib" image="../graphics/entities/mib.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    </group>
+    <group name="Traps n Obstacles" idx="3" open="false">
+      <sprite name="Spikes" idx="4" className="obstacle" image="../graphics/entities/obstacles.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
+        <properties>
+          <type typeof="String" name="type" value="spikes" hidden="false"/>
+        </properties>
+      </sprite>
+      <sprite name="Trap" idx="5" className="trap" image="../graphics/entities/traps.png" width="32" height="32" preview="1" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    </group>
+    <group name="Valuable" idx="6" open="false">
+      <sprite name="Coin" idx="7" className="coin" image="../graphics/entities/coin.png" width="32" height="32" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="32" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
+        <properties>
+          <type typeof="Int" name="value" value="10" hidden="false"/>
+        </properties>
+      </sprite>
+      <sprite name="Bonus" idx="8" className="bonus" image="../graphics/entities/bonus.png" width="32" height="56" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="56" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    </group>
+    <sprite name="Spawn" idx="9" className="spawn" image="../graphics/entities/door.png" width="64" height="64" preview="4" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
+    <sprite name="Exit" idx="10" className="exit" image="../graphics/entities/exit.png" width="32" height="64" preview="0" anchorX="16" anchorY="32" centerAnchor="true" boundsX="0" boundsY="0" boundsWidth="32" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false" selected="true">
       <properties>
-        <type typeof="Boolean" name="enter" value="true" hidden="false"/>
-      </properties>
-    </sprite>
-    <sprite name="Exit" idx="2" className="way" image="../graphics/entities/door.png" width="64" height="64" preview="3" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
-      <properties>
-        <type typeof="Boolean" name="enter" value="false" hidden="false"/>
         <type typeof="String" name="where" value="2" hidden="false"/>
       </properties>
     </sprite>
-    <sprite name="Tree" idx="3" className="tree" image="../graphics/entities/drzewo.png" width="64" height="128" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="128" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
-    <sprite name="Tree" idx="4" className="tree2" image="../graphics/entities/drzewo2.png" width="64" height="128" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="128" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false"/>
-    <sprite name="Backdrop" idx="5" className="bg" image="../graphics/bg/sky.png" width="64" height="64" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="64" boundsHeight="64" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false" selected="true">
+    <sprite name="Night" idx="11" className="bg" image="../graphics/bg/sky.png" width="768" height="768" preview="0" anchorX="0" anchorY="0" centerAnchor="false" boundsX="0" boundsY="0" boundsWidth="768" boundsHeight="768" constructor="" creation="" exports="true" canScale="true" canRotate="true" surfaceObject="false" tileIndex="-1" canEditFrames="true" lockRotation="false">
       <properties>
         <type typeof="String" name="name" value="night" hidden="false"/>
       </properties>
@@ -26,98 +38,67 @@
   </spriteEntries>
   <layers>
     <group name="Group1" id="8" xScroll="1" yScroll="1" visible="true" open="true" locked="false" exports="true">
-      <maplayer name="30" id="0" xScroll="1" yScroll="1" x="0" y="0" width="32" height="16" tileset="../graphics/tiles/city20.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,44,7,0,0,0,0,0,0,0</row>
-        <row>0,0,0,6,44,44,7,0,0,6,44,7,0,0,6,44,7,0,0,0,0,0,41,12,30,0,0,0,0,0,0,0</row>
-        <row>0,0,0,41,21,8,30,0,0,41,9,30,0,0,41,8,30,0,0,0,0,0,41,12,30,0,0,0,0,0,0,0</row>
-        <row>0,0,0,41,21,21,30,0,0,41,11,30,0,0,41,8,30,0,0,0,0,0,41,21,30,0,0,0,0,0,0,0</row>
-        <row>0,0,0,41,21,11,30,0,0,41,21,30,0,0,41,16,30,0,0,0,0,0,41,51,30,0,0,0,0,0,0,0</row>
-        <row>0,0,0,41,21,21,30,0,0,41,51,30,0,0,41,17,30,0,0,0,0,0,41,45,30,0,0,0,0,0,0,0</row>
-        <row>2,3,3,29,29,29,29,3,3,29,29,29,3,3,29,29,29,3,3,3,3,3,29,29,29,3,3,3,3,3,3,4</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
+      <maplayer name="10" id="0" xScroll="1" yScroll="1" x="-128" y="-128" width="40" height="22" tileset="../graphics/tiles/city10.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
+        <row>6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3</row>
+        <row>4,16,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,16,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,0,0,0,4,1</row>
+        <row>4,1,0,0,0,4,16,16,16,16,16,16,19,16,17,16,17,16,16,19,18,16,16,16,18,16,16,16,16,19,16,16,16,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,4,16,16,16,16,16,16,19,16,16,16,16,16,16,16,16,18,16,16,16,16,16,17,16,16,16,16,16,18,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,4,16,16,16,16,18,19,16,16,17,16,16,16,17,19,16,16,17,16,16,17,16,17,16,17,16,17,18,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,4,16,16,16,16,16,16,16,16,16,19,16,16,18,17,18,16,16,16,16,16,18,19,19,16,16,16,18,16,1,0,0,0,4,1</row>
+        <row>4,1,0,0,0,12,8,16,16,16,16,16,18,16,16,16,16,16,16,17,19,16,16,16,16,16,17,16,18,16,16,16,16,8,9,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,4,16,16,19,18,16,16,16,19,16,19,16,17,16,16,16,16,16,16,19,16,16,16,17,16,1,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,12,8,8,8,8,8,8,8,8,8,8,16,16,16,18,8,8,8,8,8,8,8,8,8,8,9,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,19,17,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,17,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,17,18,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,12,8,8,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,1</row>
+        <row>4,17,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,16,1</row>
+        <row>12,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9</row>
       </maplayer>
-      <maplayer name="20" id="1" xScroll="1" yScroll="1" x="0" y="0" width="32" height="16" tileset="../graphics/tiles/city20.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,6,44,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,41,9,30,0,0,0,0,0,0,0,0,0,6,44,7,0,0,0,0,0,0</row>
-        <row>0,0,0,0,6,44,44,44,7,0,0,41,18,30,0,0,6,44,44,7,0,0,0,41,9,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,41,51,21,21,30,0,0,41,26,30,0,0,41,12,21,30,0,0,0,41,16,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,41,12,17,18,30,0,0,41,11,30,0,0,41,45,18,30,0,0,0,41,21,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,41,21,21,16,30,0,0,41,21,30,0,0,41,20,21,30,0,0,0,41,45,30,0,0,0,0,0,0</row>
-        <row>0,0,0,0,41,45,8,45,30,0,0,41,18,30,0,0,41,18,51,30,0,0,0,41,21,30,0,0,0,0,0,0</row>
-        <row>2,3,3,3,29,29,29,29,29,3,3,29,29,29,3,3,29,29,29,29,3,3,3,29,29,29,3,3,3,3,3,4</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-      </maplayer>
-      <maplayer name="10" id="2" xScroll="1" yScroll="1" x="-96" y="-64" width="38" height="21" tileset="../graphics/tiles/city10.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>36,3,3,3,36,36,7,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,6,36,36,3,3,3,36</row>
-        <row>22,14,22,0,33,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,33,14,33</row>
-        <row>22,14,22,0,33,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,33,14,33</row>
-        <row>22,14,22,0,33,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,33,14,33</row>
-        <row>22,14,22,0,33,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,33,14,33</row>
-        <row>22,14,22,0,33,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,33,14,33</row>
-        <row>22,14,22,0,33,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,22,0,33,14,33</row>
-        <row>22,14,22,0,10,21,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,21,11,0,33,14,33</row>
-        <row>22,14,22,0,42,42,8,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,8,42,42,0,33,14,33</row>
-        <row>22,14,22,0,42,42,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,9,42,42,0,33,14,33</row>
-        <row>22,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,33</row>
-        <row>22,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,6,36,36,36,36,7,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,33</row>
-        <row>22,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,33</row>
-        <row>22,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,33</row>
-        <row>22,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14,14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,33</row>
-        <row>22,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,10,21,21,21,21,11,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,33</row>
-        <row>22,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,33</row>
-        <row>22,14,14,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,14,14,33</row>
-        <row>22,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,33</row>
-        <row>14,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,36,14</row>
-      </maplayer>
-      <spritelayer name="1" id="3" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false" selected="true">
-        <sprite guid="C40A8AEC-3C26-9A44-1123-967CFC4BE04E" x="32" y="224" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="1">
+      <spritelayer name="1" id="1" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false" selected="true">
+        <sprite guid="C40A8AEC-3C26-9A44-1123-967CFC4BE04E" x="32" y="224" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="9"/>
+        <sprite guid="7D85984A-15D3-DE08-2648-F1136A820F48" x="944" y="224" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="10">
           <properties/>
         </sprite>
-        <sprite guid="7D85984A-15D3-DE08-2648-F1136A820F48" x="928" y="224" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="2">
-          <properties>
-            <dataOverride name="where" typeof="String" value="3" idx="1"/>
-          </properties>
+        <sprite guid="01F061F4-6C3A-4D87-CFB8-5DE71484DBA2" x="448" y="448" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
         </sprite>
-        <sprite guid="E4A57CBC-5D88-0177-664E-EDBA21ACD6B1" x="288" y="160" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="3"/>
-        <sprite guid="0719EDD7-6562-1114-CA0A-3C76A8CF913D" x="672" y="160" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="3"/>
+        <sprite guid="5E13A70B-1DFF-D165-02CF-897DC485FEB2" x="480" y="448" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="551D5CA9-FD27-C08B-4228-88EB7A97D9C1" x="512" y="448" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="A53049A8-CC1F-133B-FAA7-A35882D399FA" x="544" y="448" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="4">
+          <properties/>
+        </sprite>
+        <sprite guid="7048E15B-920E-4A90-48B1-B4FB477B91C0" x="160" y="256" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="0D55E57D-24B4-4341-08D7-EC7EF74748FD" x="256" y="256" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="8BDCAA9A-259F-1598-CB14-BA3147AB34A2" x="832" y="256" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="18BD8AE7-5122-58A3-C6C4-3934EE9382A2" x="736" y="256" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="8C20FEFD-6894-F7B7-876B-32EA873E8131" x="640" y="256" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
+        <sprite guid="360F6FE8-E895-26E5-C893-6DA7AF6D12AC" x="352" y="256" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="7">
+          <properties/>
+        </sprite>
       </spritelayer>
-      <maplayer name="0" id="4" xScroll="1" yScroll="1" x="-64" y="0" width="36" height="18" tileset="../graphics/tiles/city0.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
-        <row>14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14</row>
-        <row>14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14</row>
-        <row>14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14</row>
-        <row>14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14</row>
-        <row>14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14</row>
-        <row>14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14</row>
-        <row>14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14</row>
-        <row>14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14</row>
-        <row>14,14,22,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,33,14,14</row>
-        <row>14,14,14,36,36,36,36,36,36,36,36,36,36,36,7,0,0,0,0,0,0,6,36,36,36,36,36,36,36,36,36,36,36,14,14,14</row>
-        <row>14,14,14,14,14,14,14,14,14,14,14,14,14,14,22,0,0,0,0,0,0,33,14,14,14,14,14,14,14,14,14,14,14,14,14,14</row>
-        <row>14,14,14,14,14,14,14,14,14,14,14,14,14,14,22,0,0,0,0,0,0,33,14,14,14,14,14,14,14,14,14,14,14,14,14,14</row>
-        <row>14,14,14,14,14,14,14,14,14,14,14,14,14,14,22,0,0,0,0,0,0,33,14,14,14,14,14,14,14,14,14,14,14,14,14,14</row>
-        <row>14,14,14,14,14,14,14,14,14,14,14,14,14,14,22,0,0,0,0,0,0,33,14,14,14,14,14,14,14,14,14,14,14,14,14,14</row>
-        <row>14,14,14,14,14,14,14,14,14,14,14,14,14,14,22,0,0,0,0,0,0,33,14,14,14,14,14,14,14,14,14,14,14,14,14,14</row>
-        <row>14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,36,36,36,36,36,36,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14</row>
-        <row>14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14</row>
-        <row>14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14,14</row>
-      </maplayer>
-      <maplayer name="collision" id="5" xScroll="1" yScroll="1" x="0" y="0" width="32" height="16" tileset="../graphics/bg/sky.png" tileWidth="32" tileHeight="32" visible="false" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
+      <maplayer name="collision" id="2" xScroll="1" yScroll="1" x="0" y="0" width="32" height="16" tileset="../graphics/bg/sky.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
         <row>1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</row>
         <row>1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
         <row>1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
@@ -127,78 +108,72 @@
         <row>1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
         <row>1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
         <row>1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
-        <row>1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0</row>
-        <row>0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0</row>
+        <row>1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1</row>
+        <row>1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
+        <row>1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
+        <row>1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
+        <row>1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
+        <row>1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1</row>
+        <row>1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1</row>
       </maplayer>
-      <shapelayer name="-1" id="6" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false"/>
-      <spritelayer name="300" id="7" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false">
-        <sprite guid="E2986F5F-0250-E7E3-83B0-C4B23D3AF093" x="192" y="0" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="5">
-          <properties/>
-        </sprite>
-      </spritelayer>
-      <spritelayer name="25" id="8" xScroll="1" yScroll="1" visible="true" locked="false" exports="true" aligned="false" sort="false">
-        <sprite guid="17A6F983-1B62-0AB4-E93D-A88F2E53FA8E" x="288" y="-32" Z="0" angle="0" scaleX="1" scaleY="1" flipped="false" idx="5">
-          <properties>
-            <dataOverride name="name" typeof="String" value="lights" idx="0"/>
-          </properties>
-        </sprite>
-      </spritelayer>
+      <maplayer name="0" id="3" xScroll="1" yScroll="1" x="-64" y="-64" width="36" height="18" tileset="../graphics/tiles/city0.png" tileWidth="32" tileHeight="32" visible="true" hasHits="false" drawIdx="1" collideIdx="1" eraseIdx="0" locked="false" exports="true" tileSpacingX="32" tileSpacingY="32" xStagger="0" tileOffsetX="0" tileOffsetY="0" isMaster="false" mapType="2d" hasHeight="false" repeatX="false" repeatY="false">
+        <row>6,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,3</row>
+        <row>4,17,16,16,16,18,18,16,16,16,16,18,17,19,16,19,16,18,16,16,16,18,16,18,17,16,16,16,19,17,16,16,16,17,19,1</row>
+        <row>4,16,16,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,16,16,1</row>
+        <row>4,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,17,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,17,1</row>
+        <row>4,17,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,17,1</row>
+        <row>4,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,16,1</row>
+        <row>4,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,19,1</row>
+        <row>4,16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,18,1</row>
+        <row>4,19,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4,17,1</row>
+        <row>4,16,17,2,2,2,2,2,2,2,2,2,2,2,2,3,0,0,0,0,6,2,2,2,2,2,2,2,2,2,2,2,2,17,17,1</row>
+        <row>4,16,16,16,16,16,18,17,18,16,16,16,16,19,18,1,0,0,0,0,4,16,17,18,16,16,18,16,16,16,16,18,16,18,16,1</row>
+        <row>4,16,16,16,19,17,17,16,16,16,16,16,16,16,16,1,0,0,0,0,4,18,16,16,19,17,16,18,19,16,16,19,16,16,16,1</row>
+        <row>4,19,16,19,17,16,16,16,16,17,16,16,16,16,16,1,0,0,0,0,4,16,17,19,16,16,19,16,16,16,16,16,18,16,16,1</row>
+        <row>4,18,17,16,16,16,16,16,16,16,18,16,16,16,18,1,0,0,0,0,4,19,16,16,16,16,16,16,16,18,19,17,16,17,16,1</row>
+        <row>4,16,16,16,16,19,16,16,16,16,16,18,16,17,16,1,0,0,0,0,4,17,19,16,18,16,16,19,16,18,16,16,16,16,17,1</row>
+        <row>12,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,10,10,10,10,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,9</row>
+      </maplayer>
     </group>
   </layers>
   <layerTemplates/>
-  <tileMatrix currentMatrix="2" rows="6" cols="6" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="true" allowSpecialTiles="true" tileset="../graphics/bg.png">
+  <tileMatrix currentMatrix="0" rows="5" cols="5" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="false" allowSpecialTiles="true" tileset="../graphics/tiles/city0.png">
     <row>
       <tile>6</tile>
-      <tile>36</tile>
-      <tile>36</tile>
-      <tile>36</tile>
-      <tile>36</tile>
-      <tile>7</tile>
+      <tile>2</tile>
+      <tile>2</tile>
+      <tile>2</tile>
+      <tile>3</tile>
     </row>
     <row>
-      <tile>33</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>22</tile>
+      <tile>4</tile>
+      <tile>16</tile>
+      <tile>17</tile>
+      <tile>16</tile>
+      <tile>1</tile>
     </row>
     <row>
-      <tile>33</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>22</tile>
+      <tile>4</tile>
+      <tile>18</tile>
+      <tile>19</tile>
+      <tile>16</tile>
+      <tile>1</tile>
     </row>
     <row>
-      <tile>33</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>22</tile>
+      <tile>4</tile>
+      <tile>16</tile>
+      <tile>16</tile>
+      <tile>16</tile>
+      <tile>1</tile>
     </row>
     <row>
-      <tile>33</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>14</tile>
-      <tile>22</tile>
-    </row>
-    <row>
-      <tile>10</tile>
-      <tile>21</tile>
-      <tile>21</tile>
-      <tile>21</tile>
-      <tile>21</tile>
-      <tile>11</tile>
+      <tile>12</tile>
+      <tile>8</tile>
+      <tile>8</tile>
+      <tile>8</tile>
+      <tile>9</tile>
     </row>
     <specialConnections>
       <sets>
@@ -248,51 +223,24 @@
       <rows>
         <row set="0">
           <tiles>
-            <id>4</id>
-            <id>9</id>
-            <id>2</id>
-            <id>5</id>
+            <id>11</id>
+            <id>13</id>
+            <id>14</id>
+            <id>7</id>
           </tiles>
         </row>
         <row set="3">
           <tiles>
-            <id>3</id>
-            <id>8</id>
-            <id>1</id>
+            <id>10</id>
+            <id>5</id>
+            <id>15</id>
             <id>0</id>
           </tiles>
         </row>
       </rows>
     </specialConnections>
   </tileMatrix>
-  <tileMatrixData name="matrix1" rows="1" cols="1" randomizeMiddle="true" ignoreClear="false" ignoreMapEdges="true" allowSpecialTiles="false" tileset="../graphics/city.png">
-    <tiles>1</tiles>
-    <connections set="3">
-      <tiles>3,1,1,3</tiles>
-    </connections>
-    <connections set="0">
-      <tiles>5,1,2,1</tiles>
-    </connections>
-  </tileMatrixData>
-  <tileMatrixData name="city" rows="6" cols="6" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="true" allowSpecialTiles="true" tileset="../graphics/tiles/city20.png">
-    <tiles>6,44,44,44,44,7,41,8,9,11,12,30,41,16,17,18,20,30,41,26,45,51,21,30,41,21,21,21,21,30,14,29,29,29,29,15</tiles>
-    <connections set="0">
-      <tiles>4,13,2,5</tiles>
-    </connections>
-    <connections set="3">
-      <tiles>3,10,1,0</tiles>
-    </connections>
-  </tileMatrixData>
-  <tileMatrixData name="tiles" rows="6" cols="6" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="true" allowSpecialTiles="true" tileset="../graphics/bg.png">
-    <tiles>6,36,36,36,36,7,33,14,14,14,14,22,33,14,14,14,14,22,33,14,14,14,14,22,33,14,14,14,14,22,10,21,21,21,21,11</tiles>
-    <connections set="0">
-      <tiles>4,9,2,5</tiles>
-    </connections>
-    <connections set="3">
-      <tiles>3,8,1,0</tiles>
-    </connections>
-  </tileMatrixData>
-  <tileMatrixData name="background" rows="6" cols="6" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="true" allowSpecialTiles="true" tileset="../graphics/tiles/city20.png">
+  <tileMatrixData name="Tiles" rows="6" cols="6" randomizeMiddle="true" ignoreClear="true" ignoreMapEdges="true" allowSpecialTiles="true" tileset="../graphics/tiles/city20.png">
     <tiles>6,36,36,36,36,7,33,14,14,14,14,22,33,14,14,14,14,22,33,14,14,14,14,22,33,14,14,14,14,22,10,21,21,21,21,11</tiles>
     <connections set="0">
       <tiles>4,9,2,5</tiles>
@@ -347,7 +295,7 @@
     <ForceTilemapPositionChangesInUnits>false</ForceTilemapPositionChangesInUnits>
   </options>
   <exporter name="/home/frondeus/Dropbox/Projekty/Axis/assets/levels/Exporters/Axis_Export.lua" spritepos="Top Left" rotatedSpritePos="false" relativePaths="false" useProjectExporterOnly="false">
-    <setting name="LevelName">2</setting>
+    <setting name="LevelName">1</setting>
     <setting name="DataDir">/home/frondeus/Dropbox/Projekty/Axis/assets/levels</setting>
   </exporter>
   <customPropertyTypes/>

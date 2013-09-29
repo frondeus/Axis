@@ -9,6 +9,9 @@ import com.haxepunk.graphics.Tilemap;
 import com.haxepunk.graphics.Backdrop;
 import com.haxepunk.graphics.Image;
 import com.haxepunk.graphics.Emitter;
+import com.haxepunk.utils.Input;
+import com.haxepunk.utils.Key;
+import com.haxepunk.graphics.Text;
 import com.haxepunk.HXP;
 import haxe.xml.Fast;
 import entities.Player;
@@ -26,9 +29,11 @@ class Region extends Entity
 			tiles.set("city 10","gfx/tiles/city10.png");
 			tiles.set("city 20","gfx/tiles/city20.png");
 		}
-
-		objects = new Map<Int,entities.Usable>();
 		sound = null;
+		rain = null;
+		layer = -5;
+
+		Input.define("any",[Key.ANY]);
 	}
 
 	private function addGfx(gfx:Graphic, layer:Int, sY:Bool = false)
@@ -58,6 +63,8 @@ class Region extends Entity
 	{
 		// kod wczytujacy
 
+		_player = player;
+
 		var b:String = openfl.Assets.getText("levels/"+ file + ".xml");
 		if(b == null)
 			throw "Level does not exist: " + file;
@@ -69,17 +76,23 @@ class Region extends Entity
 			HXP.scene.removeList(entities);
 		entities = new Array<Entity>();
 
-		// if(data.has.background)
+		 if(data.has.rain)
 		{
 			rain  = new Emitter( "gfx/particles/rain.png" , 16 , 64 );
 			rain.newType("rain",[0]);
 			rain.setMotion("rain",270,HXP.screen.height,0.01,0,256,1.0);
 			rain.setAlpha("rain",0.5,1.0);
-			rain.layer = -100;
-			rain.scrollX = 0.0;
-
-			graphic = new Graphiclist([rain,]);
+			rain.scrollX = 1.0;
 		}
+		var st = new String(" press ANY key to continue");
+		if(data.hasNode.text)
+			st = data.node.text.innerData + "\n\n" + st;
+		spawnText  = new Text(st);
+		spawnText.x = HXP.halfWidth - (spawnText.textWidth * 0.5);
+		spawnText.y = HXP.halfHeight;
+		spawnText.scrollX = spawnText.scrollY = 0.0;
+		
+		graphic = new Graphiclist([rain,spawnText]);
 
 		if(data.hasNode.sfx)
 		{
@@ -88,14 +101,9 @@ class Region extends Entity
 				oldSound = data.node.sfx.att.src;
 				if(sound != null) sound.stop();
 				sound = new Sfx(data.node.sfx.att.src);
-				if(data.node.sfx.att.loop == "true")
-				{
-					sound.loop();
-				}
-				else
-				{
-					sound.play();
-				}		
+				if(data.node.sfx.att.loop == "true")	sound.loop();
+				else 									sound.play();
+					
 			}
 			
 		}
@@ -118,22 +126,6 @@ class Region extends Entity
 				addObj(obj);
 			}
 		}
-
-		if(data.hasNode.links)
-		{
-			for(link in data.node.links.elements)
-			{
-				addLink(link);
-			}
-		}
-
-		
-
-		// Objects
-
-		// Doors and Stairways.
-
-		
 		HXP.scene.addList(entities);
 
 		player.spawn = spawn;
@@ -143,34 +135,37 @@ class Region extends Entity
 
 	public override function update()
 	{
+		if(	HXP.rate != 1.0 && Input.pressed("any"))
+				HXP.rate = 1.0;
+
+		spawnText.visible = (HXP.rate != 1.0);
+
 		var hX = HXP.screen.width / 2;
 		var hY = HXP.screen.height / 2;
 		for(i in 0 ... 2)
 		{
 			
-			 rain.emitInRectangle("rain",0,HXP.camera.y, HXP.screen.width * 2, 20);
+			 if(rain != null) rain.emitInRectangle("rain",bLeft,bTop, bLeft + bRight, bTop + 20);
 		}
 		
+				
+		if(bRight > HXP.screen.width)
 		{
-			
-			
-			if(bRight > HXP.screen.width)
-			{
-				if (HXP.camera.x < bLeft)
-				HXP.camera.x = bLeft;
-				else if (HXP.camera.x > bRight - HXP.screen.width)
-				HXP.camera.x = bRight - HXP.screen.width;
-	
-			}
-			if(bBottom > HXP.screen.height)
-			{		
-				if (HXP.camera.y < bTop)
-					HXP.camera.y = bTop;
-				else if (HXP.camera.y > bBottom - HXP.screen.height)
-					HXP.camera.y = bBottom - HXP.screen.height;
-					
-			}
+			if (HXP.camera.x < bLeft)
+			HXP.camera.x = bLeft;
+			else if (HXP.camera.x > bRight - HXP.screen.width)
+			HXP.camera.x = bRight - HXP.screen.width;
+
 		}
+		if(bBottom > HXP.screen.height)
+		{		
+			if (HXP.camera.y < bTop)
+				HXP.camera.y = bTop;
+			else if (HXP.camera.y > bBottom - HXP.screen.height)
+				HXP.camera.y = bBottom - HXP.screen.height;
+				
+		}
+		
 	}
 
 	public function addObj(obj:Fast)
@@ -181,38 +176,19 @@ class Region extends Entity
 		if(obj.has.angle)
 			objA = Std.parseFloat(obj.att.angle);
 		var layer = Std.parseInt(obj.att.layer);
-		var e:Entity = null;
+		
 
 		switch(obj.name)
 		{
-			case "door":
+			case "spawn":
 			{
-				var locked:Bool = (obj.att.locked == "true");
-				e= new entities.Exit(objX,objY,locked);
-				addEntity(e,layer);
+				spawn  = new flash.geom.Point(objX+16,objY+16);
+				return;
 			}
-			case "way":
+			case "exit":
 			{
-				if(obj.att.enter == "true")	//Spawn point
-				{
-					spawn  = new flash.geom.Point(objX+16,objY+16);
-					return;
-				}
-				else
-				{
-					e = new entities.Aim(objX,objY,obj.att.where);
-					addEntity(e,layer);
-				}
-			}
-			case "tree":
-			{
-				e = new Entity(objX,objY,new Image("gfx/entities/drzewo.png"));
-				addEntity(e,layer);
-			}
-			case "tree2":
-			{
-				e = new Entity(objX,objY,new Image("gfx/entities/drzewo2.png"));
-				addEntity(e,layer);
+				var e = new entities.Exit(objX,objY,obj.att.where);
+				addEntity(e,layer);	
 			}
 			case "bg":
 			{
@@ -220,60 +196,47 @@ class Region extends Entity
 				{
 					case "night":
 					{
-						addGfx(new Backdrop("gfx/bg/sky.png",true,true),layer,true);
-						addGfx(new Backdrop("gfx/bg/sky2.png",true,true),layer-1,true);
-						addGfx(new Backdrop("gfx/bg/sky3.png",true,true),layer-2,true);
-					}
-					case "clouds":
-					{
-						addGfx(new Backdrop("gfx/bg/clouds.png",true,true),layer,true);
-					}
-					case "lights":
-					{
-						addGfx(new Backdrop("gfx/bg/sun.png",true,false),layer,true);
+						var bg = new Image("gfx/bg/sky.png");
+						bg.scale = 2.5;
+						bg.scrollX = bg.scrollY = 1.0;
+						bg.scaledWidth = bRight - bLeft;
+						bg.scaledHeight = bBottom - bTop;
+						//bg.clipRect = new flash.geom.Rectangle(bLeft,bTop,bRight - bLeft,bBottom - bTop);
+						var e:Entity = new Entity(bLeft,bTop,bg);
+						e.layer = layer;
+
+						entities.push(e);
 					}
 				}
 				return;
 			}
 			case "bonus":
 			{
-				e = new entities.Coin(objX,objY,100);//TODO
+				var e = new entities.Bonus(objX,objY);
 				addEntity(e,layer);
 			}
 			case "coin":
 			{
-				e = new entities.Coin(objX,objY,Std.parseInt(obj.att.value));
+				var e = new entities.Coin(objX,objY,Std.parseInt(obj.att.value));
 				addEntity(e,layer);
 			}
 			case "obstacle":
 			{
-				e = new entities.Obstacle(objX,objY,objA,obj.att.type);
+				var e = new entities.Obstacle(objX,objY,objA,obj.att.type);
+				addEntity(e,layer);
+			}
+			case "trap":
+			{
+				var e = new entities.Trap(objX,objY,objA);
 				addEntity(e,layer);
 			}
 			case "mib":
 			{
-				e = new entities.Mib(objX,objY);
+				var e = new entities.Mib(objX,objY,_player);
 				addEntity(e,layer);
 			}
 		}
-		if(e == null) haxe.Log.trace("NULL");
-		if(obj.has.id && e != null)
-		{
-			var id = Std.parseInt(obj.att.id);
-			objects.set(id,cast e);
-		}
 		
-	}
-
-	public function addLink(link:Fast)
-	{
-
-		var from = Std.parseInt(link.att.from);
-		var to = Std.parseInt(link.att.to);
-		if(objects.exists(from) && objects.exists(to))
-		{
-			objects.get(from).links.push(objects.get(to));
-		}
 	}
 
 	public function addLayer(group:Fast)
@@ -353,6 +316,8 @@ class Region extends Entity
 		entities.push(e);
 	}
 
+	
+
 	private var rain:Emitter;
 
 
@@ -367,13 +332,16 @@ class Region extends Entity
 
 	private var data:Fast;
 	private static var tiles:Map<String,String> = new Map<String,String>();
-	private var objects:Map<Int,entities.Usable>;
 
 	private var spawn:flash.geom.Point;
 	private var lastLvl:String;
 
 	private var sound:Sfx; 
 	private var oldSound:String;
+
+	private var _player:Player;
+
+	private var spawnText:Text;
 
 
 }

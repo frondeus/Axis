@@ -13,6 +13,7 @@ class Coin extends Entity
 		image = new Image("gfx/entities/coin.png");
 		graphic = image;
 		value = _value;
+		centerOrigin();
 		setHitbox(32,32);
 
 		type = "coin";
